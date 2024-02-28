@@ -1,0 +1,27 @@
+<!-- heredacion de plantilla base usando jinja2 -->
+{%extends './base.html' %}
+
+<!-- llenamos los bloques con datos -->
+{%block title%}
+{{dicc.titulo}}
+{%endblock%}
+
+{%block body%}
+<h1>Estp es una prueba usando heredacion plantillas</h1>
+<!-- accede a datos dinamicamente usando jinja2 -->
+{{dicc.mensaje}}  
+
+<!-- forma de iterar con jinja2 -->
+<ul> 
+    {% for c in dicc.lista %}
+    <li> {{c}}</li>
+    {% endfor %}
+</ul>
+
+<!-- condicional con jinja2 -->
+{% if dicc.long>0 %}
+<b>cursos presentes:</b>
+{% else %}
+<b>no hay cursos</b>
+{%endif%}
+{%endblock%}
